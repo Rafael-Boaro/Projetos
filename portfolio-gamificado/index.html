@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container" id="game-container">
+        <div class="background-parallax layer-3"></div>
+        <div class="background-parallax layer-2"></div>
+        <div class="background-parallax layer-1"></div>
+
+        <div class="world" id="world">
+            <img class="player" id="player-sprite" alt="Personagem">
+            
+            <div class="platform" id="p1"></div> 
+            <div class="platform" id="p2"></div>
+            <div class="platform" id="p3"></div>
+            <div class="platform" id="p4"></div>
+            <div class="interactive-object project-object" id="project-1" data-info-key="project-1"></div>
+            
+            <div class="platform" id="p5"></div> 
+            <div class="interactive-object about-me-object" id="about-me" data-info-key="about-me"></div>
+
+            <div class="platform" id="p6"></div>
+            <div class="interactive-object skill-object" id="skill-js" data-info-key="skill-js"></div>
+            <div class="interactive-object skill-object" id="skill-react" data-info-key="skill-react"></div>
+            
+            <div class="platform" id="p_quiz_step"></div>
+            <div class="platform" id="p7"></div> 
+            <div class="interactive-object quiz-master-object" id="quiz-master" data-info-key="quiz-master"></div>
+
+            <div class="platform parkour-platform" id="pk1"></div>
+            <div class="platform parkour-platform" id="pk2"></div>
+            <div class="platform parkour-platform hidden" id="hidden-bridge"></div>
+            <div class="platform parkour-platform" id="pk3"></div>
+
+            <div class="platform" id="p8"></div>
+            <div class="interactive-object contact-object" id="contact" data-info-key="contact"></div>
+        </div>
+
+        <div class="interaction-tip" id="interaction-tip">Pressione E</div>
+        
+        <div class="game-controls">
+            Setas: Mover | Espaço: Pular | E: Interagir
+        </div>
+    </div>
+
+   <div class="info-box" id="info-box">
+        <button class="close-btn" id="close-btn">X</button>
+        <h2 id="info-title"></h2>
+        <p id="info-description"></p>
+        <a href="#" id="info-link" target="_blank">Ver Mais</a>
+        <button id="next-question-btn" class="hidden">Prosseguir</button>
+    </div>
+
+    <div class="quiz-box" id="quiz-box">
+        <h2 id="quiz-question"></h2>
+        <div class="quiz-options" id="quiz-options">
+        </div>
+        <button class="close-quiz-btn" id="close-quiz-btn">Desistir</button>
+    </div>
+
+    <div class="fell-screen" id="fell-screen">
+        <h2>Você Caiu!</h2>
+        <p>Mas não se preocupe, todo dev já passou por isso.</p>
+        <button id="retry-btn">Tentar Novamente</button>
+    </div>
+
+   <script src="script.js" defer></script>
+</body>
+</html>

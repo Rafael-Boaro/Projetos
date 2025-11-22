@@ -1,0 +1,467 @@
+/* /css/admin.css (VERSÃO MODERNA E PROFISSIONAL) */
+
+/* Importa a fonte 'Montserrat' do site público */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* --- Variáveis de Cor --- */
+:root {
+    --cor-primaria: #A90E0E;
+    --cor-fundo: #f4f7f6;      /* Um cinza mais claro e suave */
+    --cor-painel: #ffffff;
+    --cor-texto: #333;
+    --cor-texto-claro: #666;
+    --cor-borda: #e0e0e0;
+    --sombra-suave: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--cor-texto);
+}
+
+/* --- 1. Estilo do Login --- */
+.login-container {
+    background-color: var(--cor-painel);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h1 {
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Estilos de Formulário (Inputs) */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(169, 14, 14, 0.1);
+    outline: none;
+}
+
+.input-group small {
+    font-size: 0.8rem;
+    color: var(--cor-texto-claro);
+    margin-top: 5px;
+}
+
+/* Estilos de Botões */
+button,
+.btn-primary,
+.btn-action {
+    background-color: #333; /* Botão escuro, mais profissional */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    transition: background-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover,
+.btn-primary:hover {
+    background-color: var(--cor-primaria); /* Fica vermelho no hover */
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 15px;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+/* --- 2. Estilos do Painel Admin (Dashboard) --- */
+
+body.dashboard {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+}
+
+.admin-navbar {
+    background-color: var(--cor-painel);
+    padding: 15px 40px;
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.admin-navbar .nav-links a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.admin-navbar .nav-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.admin-navbar .nav-links a.logout-btn {
+    background-color: #f8f9fa;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+.admin-navbar .nav-links a.logout-btn:hover {
+    background-color: #f1f1f1;
+    color: var(--cor-primaria);
+}
+
+/* Container Principal */
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: var(--cor-painel);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+}
+
+.admin-container h1 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.admin-container > p {
+    color: var(--cor-texto-claro);
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+/* Menu do Dashboard */
+.dashboard-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.menu-card {
+    background-color: var(--cor-painel);
+    border: 1px solid var(--cor-borda);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-suave);
+}
+
+.menu-card h2 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--cor-texto);
+}
+.menu-card h2 i {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+.menu-card p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
+    line-height: 1.5;
+}
+
+/* --- 3. Estilos de Páginas Internas (CRUD, Config) --- */
+
+/* Cabeçalho da Página (ex: Gerenciar Produtos) */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 20px;
+}
+.page-header h1 {
+    margin: 0;
+}
+.btn-primary {
+    width: auto; /* Ajusta o botão de "Adicionar" */
+}
+
+/* Mensagens de Feedback */
+.message-feedback {
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 20px;
+}
+
+/* Link de "Voltar" */
+a.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+}
+a.back-link i {
+    margin-right: 5px;
+}
+a.back-link:hover {
+    color: var(--cor-primaria);
+}
+
+/* Tabela de Produtos */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.product-table thead {
+    background-color: #f9f9f9;
+}
+.product-table th,
+.product-table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--cor-borda);
+}
+.product-table th {
+    font-weight: 600;
+    color: var(--cor-texto-claro);
+}
+.product-table td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+}
+.product-table tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Botões de Ação da Tabela */
+.btn-action {
+    background: none;
+    border: none;
+    padding: 5px;
+    margin-right: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    width: auto;
+}
+.btn-action i {
+    margin-right: 5px;
+}
+.btn-action.btn-edit {
+    color: #007bff;
+}
+.btn-action.btn-edit:hover {
+    color: #0056b3;
+    background: none;
+    transform: none;
+}
+.btn-action.btn-delete {
+    color: #dc3545;
+}
+.btn-action.btn-delete:hover {
+    color: #a71d2a;
+    background: none;
+    transform: none;
+}
+
+/* Formulário de Configuração */
+.config-form h2 {
+    font-weight: 600;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+.config-form .horarios-grid,
+.config-form .cores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* --- 4. Estilos de Responsividade (MANTIDOS) --- */
+@media (max-width: 768px) {
+    .admin-navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    .admin-navbar .nav-links {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .admin-navbar .nav-links a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-container {
+        padding: 20px;
+        margin: 15px;
+    }
+    .dashboard-menu {
+        grid-template-columns: 1fr; /* Coluna única */
+        gap: 15px;
+    }
+    .product-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .config-form .horarios-grid,
+    .config-form .cores-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* /css/admin.css - ADICIONE NO FINAL */
+
+/* Estilo para a caixa de seleção de promoção */
+.input-group-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.input-group-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    height: 1.1em;
+    width: 1.1em;
+}
+.input-group-checkbox label {
+    margin: 0;
+    font-weight: 600;
+    color: var(--cor-texto-claro);
+    font-size: 0.9rem;
+}
+/* /css/admin.css - ADICIONE NO FINAL */
+
+/* Estilos para a Barra de Pesquisa */
+.search-form .input-group {
+    display: flex;
+    margin-bottom: 30px;
+}
+.search-form input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.search-form button {
+    width: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Estilos para a Tabela (Status e Preço) */
+.product-table td img {
+    /* (Já existe, mas só para garantir) */
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.status-promo, .status-normal {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+.status-promo {
+    background-color: #ffeeba;
+    color: #856404;
+}
+.status-normal {
+    background-color: #f0f0f0;
+    color: #555;
+}
+.price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.85rem;
+    display: block;
+}
+.price-promo {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 1rem;
+}

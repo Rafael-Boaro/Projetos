@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin - Cadastro</title>
+    <style>
+        /* superadmin.html */
+/* --- NOVA NAVBAR ADMIN --- */
+.admin-header {
+    max-width: 600px; /* Para alinhar com o container */
+    margin: 0 auto;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-header .logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #A90E0E;
+    text-decoration: none;
+}
+.admin-header .btn-logout {
+    background: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+.admin-header .btn-logout:hover {
+    background: #c82333;
+}
+/* --- FIM DA NAVBAR ADMIN --- */
+
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Estilos do formulário */
+        .register-form {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .register-form h2 { text-align: center; margin-top: 0; }
+        .form-group { max-width: 400px; margin-left: auto; margin-right: auto; margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; width: 100%; box-sizing: border-box; }
+        .btn { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; font-weight: bold; }
+        .btn-save { background-color: #007bff; color: white; max-width: 400px; width: 100%; margin-left: auto; margin-right: auto; display: block; }
+
+        #register-message { text-align: center; font-weight: bold; margin: 10px 0; min-height: 1.2em; max-width: 400px; margin-left: auto; margin-right: auto; }
+        #register-message.success { color: green; }
+        #register-message.error { color: red; }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+     <a href="/" id="admin-logo" class="logo">Carregando...</a>
+        <button id="logoutButton" class="btn-logout">Sair</button>
+    </header>
+    <div class="container">
+
+        <form id="registerForm" class="register-form">
+            <h2>Criar Nova Conta (Loja)</h2>
+
+            <div class="form-group">
+                <label for="newUsername">Novo Usuário:</label>
+                <input type="text" id="newUsername" required>
+            </div>
+
+            <div class="form-group">
+                <label for="newPassword">Nova Senha:</label>
+                <input type="password" id="newPassword" required>
+            </div>
+
+            <div id="register-message"></div>
+
+            <button type="submit" id="btnRegisterAdmin" class="btn btn-save">Cadastrar Novo Admin</button>
+        </form>
+    </div>
+    <script src="./js/admin-navbar.js"></script>
+    <script src="./js/superadmin.js"></script>
+    <script src="./js/superadmin.js"></script>
+</body>
+</html>

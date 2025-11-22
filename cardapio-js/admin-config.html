@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações da Loja</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; }
+        .container { max-width: 1000px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .admin-header { background: #fff; padding: 10px 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .admin-header .logo { font-size: 20px; font-weight: 800; color: #A90E0E; text-decoration: none; }
+        .admin-header .btn-logout { background: #dc3545; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+        .admin-header .btn-logout:hover { background: #c82333; }
+        .btn-action { color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-edit { background-color: #ffc107; color: #212529; }
+        .btn-edit.active { background-color: #e0a800; cursor: default; } /* Botão ativo */
+        .btn-finalizar { background-color: #007bff; }
+
+        /* Estilos do Formulário */
+        .config-form { background: #fdfdfd; padding: 20px; border-radius: 8px; }
+        fieldset { border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px; padding: 20px; }
+        legend { font-weight: bold; font-size: 1.2em; color: #A90E0E; padding: 0 10px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .form-grid .full-width { grid-column: 1 / -1; }
+        .form-grid .half-width { grid-column: span 2; }
+
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input, .form-group textarea { padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+        .form-group textarea { min-height: 80px; }
+
+        .save-button-container { text-align: right; }
+        .btn-save { background-color: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .btn-save:hover { background-color: #218838; }
+
+        #save-message { text-align: right; font-weight: bold; margin: 10px 0; min-height: 1.2em; }
+        #save-message.success { color: green; }
+        #save-message.error { color: red; }
+    </style>
+</head>
+<body>
+
+    <header class="admin-header">
+       <a href="/" id="admin-logo" class="logo">Carregando...</a>
+        <div>
+            <a href="/admin-config.html" class="btn-action btn-edit active" style="margin-right: 10px; text-decoration: none;">Configurar Loja</a>
+            <a href="/admin.html" class="btn-action btn-finalizar" style="margin-right: 10px; text-decoration: none;">Painel de Pedidos</a>
+            <button id="logoutButton" class="btn-logout">Sair</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Configurações da Loja</h1>
+        <p style="text-align: center; margin-top: -10px; color: #555;">
+            Estas informações serão exibidas publicamente na página inicial (`index.html`).
+        </p>
+
+        <form id="configForm" class="config-form">
+
+            <fieldset>
+                <legend>Dados Gerais</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nomeLoja">Nome da Loja</label>
+                        <input type="text" id="nomeLoja" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsappNumero">Nº de WhatsApp (para exibir)</label>
+                        <input type="text" id="whatsappNumero" placeholder="(14) 99123-4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsappLink">Link do WhatsApp (completo)</label>
+                        <input type="text" id="whatsappLink" placeholder="https://wa.me/55..." required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Textos do Site</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sobreTitulo">Título "Sobre"</label>
+                        <input type="text" id="sobreTitulo">
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="sobreTexto">Texto "Sobre"</label>
+                        <textarea id="sobreTexto"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="rodapeQuemSomos">Texto "Quem Somos" (Rodapé)</label>
+                        <textarea id="rodapeQuemSomos"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço e Mapa</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="enderecoTexto">Endereço (para exibir)</label>
+                        <input type="text" id="enderecoTexto" placeholder="Rua, Nº, Bairro...">
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="mapaLink">Link `src` do Iframe (Google Maps)</label>
+                        <input type="text" id="mapaLink" placeholder="https://www.google.com/maps/embed?...">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Redes Sociais</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="social_facebook">Link do Facebook</label>
+                        <input type="text" id="social_facebook">
+                    </div>
+                    <div class="form-group">
+                        <label for="social_instagram">Link do Instagram</label>
+                        <input type="text" id="social_instagram">
+                    </div>
+                    <div class="form-group">
+                        <label for="social_twitter">Link do Twitter</label>
+                        <input type="text" id="social_twitter">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Horários de Atendimento</legend>
+                <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                    <div class="form-group"><label for="horario_seg">Segunda</label><input type="text" id="horario_seg" placeholder="Fechado"></div>
+                    <div class="form-group"><label for="horario_ter">Terça</label><input type="text" id="horario_ter" placeholder="Fechado"></div>
+                    <div class="form-group"><label for="horario_qua">Quarta</label><input type="text" id="horario_qua" placeholder="19h às 00h"></div>
+                    <div class="form-group"><label for="horario_qui">Quinta</label><input type="text" id="horario_qui" placeholder="19h às 00h"></div>
+                    <div class="form-group"><label for="horario_sex">Sexta</label><input type="text" id="horario_sex" placeholder="19h às 00h"></div>
+                    <div class="form-group"><label for="horario_sab">Sábado</label><input type="text" id="horario_sab" placeholder="19h às 00h"></div>
+                    <div class="form-group"><label for="horario_dom">Domingo</label><input type="text" id="horario_dom" placeholder="19h às 00h"></div>
+                </div>
+            </fieldset>
+
+            <div id="save-message"></div>
+            <div class="save-button-container">
+                <button type="submit" class="btn-save">Salvar Configurações</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js/admin-navbar.js"></script>
+    <script src="./js/admin-config.js"></script>
+    <script src="./js/admin-config.js"></script>
+</body>
+</html>

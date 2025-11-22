@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <title>SPACE BURGER | Carrinho de compras</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="back">
+            <a href="../index.html">
+                <span class="iconify-inline" data-icon="ion:arrow-back-outline"></span>
+                Voltar
+            </a>
+        </div>
+        <!-- Top -->
+        <h1>Carrinho de compras</h1>
+        <p class="info">Ao clicar em ‘Gerar Pedido’ você será redirecionado automaticamente para o WhatsApp da lanchonete juntamente
+            com seu pedido. Por isso, verifique todos os itens da sua lista antes de continuar. Após ser redirecionado
+            você finalizará a compra efetuando o pagamento para um de nossos atendentes. =D</p>
+        <!-- Content -->
+        <div class="row">
+            <!-- Left -->
+            <div class="items">
+                <h2>Itens escolhidos</h2>
+                <hr>
+                <div id="showItems">
+                    <!-- ITEMS -->
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="total">
+                <h2>Valor final</h2>
+                <hr>
+                <div class="division">
+                    <h3>Entrega</h3>
+                    <div class="option">
+                        <p>Retirada no local (+ R$ 0,00)</p>
+                        <button id="dontWantDelivery" class="active"></button>
+                    </div>
+                    <div class="option">
+                        <p>Delivery (+ R$ 3,00)</p>
+                        <button id="wantDelivery"></button>
+                    </div>
+                </div>
+                <div class="division">
+                    <h3>Cupom</h3>
+                    <div class="promotionCode">
+                        <input type="text" placeholder="Insira o código aqui" id="promotionCode">
+                        <button id="addPromotionCode">+</button>
+                    </div>
+                </div>
+                <div class="division">
+                    <h3>Informações</h3>
+                    <div class="item">
+                        <p>Valor do pedido:</p>
+                        <span id="showAllItemsValue">Carregando...</span>
+                    </div>
+                    <div class="item">
+                        <p>Taxa de entrega:</p>
+                        <span id="showDelivery">Carregando...</span>
+                    </div>
+                    <div class="item">
+                        <p>Desconto (cupom):</p>
+                        <span id="showDiscount">Carregando...</span>
+                    </div>
+                </div>
+                <hr>
+                    <div class="item">
+                        <h3>Total</h3>
+                        <span id="showTotal">Carregando...</span>
+                    </div>
+                <button id="generateOrder">Gerar Pedido</button>
+                <div class="keepBuying">
+                    <p>ou</p>
+                    <a href="../index.html">Continuar comprando</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../js/shoppingCart.js"></script>
+</body>
+
+</html>

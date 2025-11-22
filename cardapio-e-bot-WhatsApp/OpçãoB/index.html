@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <title>Carregando Cardápio...</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="content">
+            <a href="#" id="logo">...</a>
+            
+            <div class="items" id="navbar-items"></div>
+            
+            <div class="navbar-cta" id="navbar-cta"></div>
+            
+            <div class="btnMobile">
+                <span class="iconify-inline" data-icon="cil:burger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="mobile-drawer" id="mobile-drawer">
+        </div>
+
+    <div class="banner" id="banner-container">
+        </div>
+
+    <div id="about">
+        <div class="container">
+            <h3>Sobre Nós</h3>
+            <p>Seja bem-vindo! Explore nosso cardápio e faça seu pedido facilmente pelo WhatsApp.</p>
+        </div>
+    </div>
+
+    <div id="promotions" class="container" style="display: none;"> 
+        <h3>🔥 Nossas Promoções</h3>
+        <div class="cardsMenu" id="showPromotions">
+            </div>
+    </div>
+
+    <div id="menu" class="container">
+        <h3>Cardápio</h3>
+        <div class="linksMenu" id="menu-filters">
+            </div>
+        <div class="cardsMenu" id="showMenu">
+            </div>
+    </div>
+
+    <div id="service" class="container">
+        <h3>Atendimento</h3>
+        <div class="locAndCont" id="service-info">
+            </div>
+        <div class="days" id="service-hours">
+            </div>
+    </div>
+
+    <div class="footerBottom" id="footer-content">
+        </div>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+        
+        <input type="hidden" id="whatsapp-number" value="">
+        
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <button class="cart-close-btn" id="cart-close-btn">
+                <span class="iconify-inline" data-icon="mdi:close"></span>
+            </button>
+        </div>
+        
+        <div class="cart-body" id="cart-body">
+             </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="send-order-btn" id="send-order-btn">
+                <span class="iconify-inline" data-icon="akar-icons:whatsapp-fill"></span>
+                Enviar Pedido pelo WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <script src="js/data.js"></script> 
+    
+    <script src="js/app.js"></script>
+
+</body>
+</html>

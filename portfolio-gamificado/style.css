@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+/* --- Fundo Parallax --- */
+.background-parallax {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.1s linear;
+    z-index: 0;
+}
+
+/* --- Mundo do Jogo e Elementos Principais --- */
+.world {
+    position: relative;
+    width: 350vw;
+    height: 100vh;
+    transition: transform 0.3s ease-out; 
+    z-index: 1;
+}
+
+.player {
+    position: absolute;
+    width: 50px;
+    height: 37px;
+    transform: scale(2);
+    transform-origin: center bottom;
+    image-rendering: pixelated;
+    z-index: 2;
+}
+
+/* --- MUDANÇA AQUI: PLATAFORMAS COM IMAGEM --- */
+.platform {
+    position: absolute;
+    background-color: #228B22; /* Cor de reserva */
+    background-image: url('assets/grama.jpeg');
+    background-size: 60px 100%; /* Ajusta a largura da textura */
+    background-repeat: repeat-x; /* Repete a imagem horizontalmente */
+}
+
+.interactive-object {
+    position: absolute;
+    z-index: 2;
+    background-size: contain; /* Padrão para todos os objetos */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* --- POSICIONAMENTO DAS SEÇÕES --- */
+#p1 { bottom: 0; left: 0; width: 800px; height: 50px; }
+#p2 { bottom: 150px; left: 200px; width: 150px; height: 20px; }
+#p3 { bottom: 250px; left: 400px; width: 150px; height: 20px; }
+#p4 { bottom: 350px; left: 150px; width: 150px; height: 20px; }
+.project-object { 
+    width: 100px; height: 90px; 
+    background-image: url('assets/computador.png'); 
+    bottom: 270px; left: 450px; 
+}
+#p5 { bottom: 180px; left: 800px; width: 200px; height: 20px; }
+.about-me-object { 
+    width: 80px; height: 60px; 
+    background-image: url('assets/livro.png');
+    bottom: 200px; left: 875px; 
+}
+#p6 { bottom: 0; left: 1200px; width: 500px; height: 50px; }
+.skill-object { width: 65px; height: 65px; }
+#skill-js { background-image: url('assets/JS.png'); bottom: 70px; left: 1250px; }
+#skill-react { background-image: url('assets/react.jpeg'); bottom: 70px; left: 1400px; }
+
+/* --- NOVA ÁREA DE QUIZ E PARKOUR --- */
+#p_quiz_step { bottom: 80px; left: 1850px; width: 80px; height: 20px; }
+#p7 { bottom: 0; left: 2000px; width: 300px; height: 50px; }
+.quiz-master-object { 
+    width: 200px; height: 220px; 
+    background-image: url('assets/estatua.png');
+    bottom: 50px; left: 2120px; 
+}
+.parkour-platform { 
+    background-image: url('assets/pedra.jpeg');
+    background-size: cover;
+}
+#pk1 { bottom: 150px; left: 2400px; width: 80px; height: 20px; }
+#pk2 { bottom: 250px; left: 2550px; width: 80px; height: 20px; }
+#hidden-bridge { bottom: 250px; left: 2650px; width: 150px; height: 15px; background-image: url('assets/ouro.jpeg'); transition: opacity 0.5s ease-in-out; }
+#pk3 { bottom: 180px; left: 2880px; width: 80px; height: 20px; }
+#p8 { bottom: 0; left: 3000px; width: 400px; height: 50px; }
+.contact-object { 
+    width: 60px; height: 60px; 
+    background-image: url('assets/correio.png');
+    bottom: 50px; left: 3150px; 
+}
+/* .contact-object::after { content: '@rafael_pboaro'; } */
+
+
+/* --- INTERFACES --- */
+.interaction-tip { position: fixed; display: none; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 5px 10px; border-radius: 5px; font-family: sans-serif; font-size: 12px; z-index: 10; }
+.info-box { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 600px; background-color: white; border: 2px solid #333; border-radius: 10px; padding: 20px; z-index: 1000; font-family: sans-serif; display: none; }
+.info-box.visible { display: block; }
+.close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer; }
+.quiz-box { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); width: 90%; max-width: 500px; background-color: rgba(0, 0, 0, 0.85); color: white; border: 2px solid #FFC107; border-radius: 10px; padding: 25px; z-index: 2000; font-family: sans-serif; display: none; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; }
+.quiz-box.visible { display: block; opacity: 1; transform: translate(-50%, -50%) scale(1); }
+#quiz-question { margin-bottom: 20px; font-size: 1.2em; text-align: center; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-options button { background-color: #4E342E; color: white; border: 2px solid #795548; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.2s, transform 0.2s; }
+.quiz-options button:hover { background-color: #795548; transform: scale(1.02); }
+.close-quiz-btn { margin-top: 20px; background: none; border: 1px solid #aaa; color: #aaa; padding: 5px 10px; border-radius: 5px; cursor: pointer; display: block; margin-left: auto; }
+.close-quiz-btn:hover { background-color: #333; }
+.hidden { opacity: 0; pointer-events: none; }
+.hidden.visible { opacity: 1; pointer-events: all; }
+
+/* --- TELA DE "VOCÊ CAIU" --- */
+.game-controls {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    z-index: 5;
+}
+.fell-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-family: sans-serif; z-index: 3000; }
+.fell-screen.visible { display: flex; }
+.fell-screen h2 { font-size: 3em; color: #B22222; margin-bottom: 10px; }
+.fell-screen p { margin-bottom: 30px; }
+#next-question-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+}
+
+#next-question-btn.hidden {
+    display: none;
+}
+#retry-btn { background-color: #228B22; color: white; border: 2px solid #006400; padding: 15px 30px; border-radius: 8px; font-size: 1.2em; cursor: pointer; transition: transform 0.2s; }
+#retry-btn:hover { transform: scale(1.05); }

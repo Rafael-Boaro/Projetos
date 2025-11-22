@@ -1,0 +1,315 @@
+/* style.css (VERSÃO 3.0 - COM POLIMENTO FINAL) */
+
+/* --- RESET BÁSICO E FONTES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #111827; /* Fundo escuro */
+    color: #f3f4f6; /* Texto claro */
+    line-height: 1.6;
+}
+
+/* --- POLIMENTO: SCROLLBAR CUSTOMIZADA --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1f2937; /* Cor de fundo da barra */
+}
+::-webkit-scrollbar-thumb {
+    background: #34d399; /* Cor do "elevador" (verde) */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #10b981; /* Cor ao passar o mouse */
+}
+
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    color: #34d399; /* Verde "Filhos de Maria" */
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* --- 1. NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    border-bottom: 1px solid #374151;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-button {
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #059669;
+}
+
+/* --- 2. SEÇÃO HERO (IMAGEM) --- */
+.hero-section {
+    padding-top: 100px;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #1f2937;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.hero-image-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    max-width: 600px;
+}
+
+.cta-button {
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    /* POLIMENTO: Espaçamento de letras */
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+/* --- 3. SEÇÃO CARROSSEL (BEM MENOR!) --- */
+.carousel-section {
+    padding: 4rem 1rem;
+    background-color: #111827;
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    width: 100%;
+    /* ALTURA BEM MENOR PARA MOBILE */
+    height: 100px; 
+    background-color: #000;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    transition: background-color 0.3s ease;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 1rem;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* --- 4. AVISOS (HORIZONTAL) --- */
+.info-section {
+    padding: 4rem 1rem;
+    background-color: #1f2937;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #111827;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* POLIMENTO: Transição suave para o hover */
+    transition: transform 0.3s ease;
+}
+
+/* POLIMENTO: Efeito de "levantar" o card ao passar o mouse */
+.info-card:hover {
+    transform: scale(1.03);
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: #34d399;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-card span {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* --- 5. CHAMADA FINAL --- */
+.cta-section {
+    background-color: #111827;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- 6. ANIMAÇÃO DE SCROLL --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- 7. (1000% RESPONSIVO) - MEDIA QUERIES --- */
+
+/* Telas de tablet (640px) e maiores */
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    .nav-button {
+        font-size: 1rem;
+    }
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .swiper-slide {
+        /* Altura de tablet (um pouco maior, mas não muito) */
+        height: 175px;
+    }
+}
+
+/* Telas de desktop (1024px) e maiores */
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .swiper-slide {
+        /* Altura de desktop (um pouco maior) */
+        height: 200px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 44px;
+        height: 44px;
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 1.25rem;
+    }
+}

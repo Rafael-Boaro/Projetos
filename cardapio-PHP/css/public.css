@@ -1,0 +1,214 @@
+/* /cardapio-php/css/public.css */
+
+/* Cores dinâmicas definidas no <style> do index.php */
+:root {
+    --cor-primaria: #A90E0E;   /* (Padrão) */
+    --cor-secundaria: #FF7F0A; /* (Padrão) */
+    --cor-fundo: #f4f4f4;
+    --cor-fundo-card: #ffffff;
+    --cor-texto: #333;
+    --cor-texto-claro: #ffffff;
+    --sombra: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header --- */
+.store-header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+.store-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+.store-header p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+.store-header i {
+    margin-right: 8px;
+}
+
+/* --- Seções Principais --- */
+.menu-section h2, .info-section h2 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- Cardápio --- */
+.category-block {
+    margin-bottom: 40px;
+}
+.category-title {
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 10px;
+}
+
+.product-list {
+    display: grid;
+    gap: 20px;
+}
+
+.product-card {
+    display: flex;
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-name {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: var(--cor-texto);
+}
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+}
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    margin-top: auto;
+}
+
+/* --- Horários --- */
+.info-section {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+.horarios-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.horarios-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+.horarios-list li:last-child {
+    border-bottom: none;
+}
+.horarios-list strong {
+    color: var(--cor-texto);
+}
+.horarios-list span {
+    color: #555;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.store-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    background-color: #333;
+    color: #aaa;
+}
+.store-footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* --- WhatsApp Float Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.05);
+}
+.whatsapp-float i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+    .product-card {
+        /* Empilha imagem e texto em telas pequenas */
+        flex-direction: column;
+    }
+    .product-image {
+        width: 100%;
+        height: 180px; /* Altura maior para imagem no topo */
+    }
+    .whatsapp-float span {
+        /* Esconde o texto no celular, deixa só o ícone */
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 15px;
+        width: 30px; /* Ajuste para ícone */
+        height: 30px; /* Ajuste para ícone */
+        border-radius: 50%;
+    }
+    .whatsapp-float i {
+        margin-right: 0;
+        font-size: 1.8rem;
+    }
+}
